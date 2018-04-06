@@ -9,15 +9,39 @@ import Joblist from './components/Joblist'
 
 class App extends Component {
 
+  constructor() {
+    super()
+    this.state = {
+      listings: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('./listings.json')
+    .then(response => response.json())
+    .then(response => {
+      this.setState({listings: response})
+    })
+
+  }
+
+
+  jobListingSubmitted = (job) => {
+    this.setState({
+      listings: this.state.listings.concat(job)
+    })
+
+  }
+
+
   render() {
     return (
       <div className="App">
         <Header />
         <main>
-          <Joblist />
-          <AddJob />
+          <Joblist listings={this.state.listings} />
+          <AddJob jobListingSubmitted={this.jobListingSubmitted} />
         </main>
-        
         <Footer />
       </div>
     );
