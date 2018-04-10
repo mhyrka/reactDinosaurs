@@ -14,10 +14,11 @@ class Joblist extends React.Component {
                    <h4>{listing.title}</h4>
                    <small>{listing.pay}</small>
                    <p>{listing.description}</p>
-                   <small>{listing.interested.length} dinosaur(s) are interested in this position</small>
+                   <small>{listing.interested.length} dinos are interested in this job</small>
                  </li>
                )
-             })}
+             })
+           }
            </ul>
        </section>
        )

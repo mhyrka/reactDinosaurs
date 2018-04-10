@@ -28,7 +28,7 @@ class App extends Component {
 
   jobListingSubmitted = (job) => {
     this.setState({
-      listings: this.state.listings.concat(job)
+      listings: this.state.listings.concat(job).reverse()
     })
 
   }
