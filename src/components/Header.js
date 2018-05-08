@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 class Header extends React.Component {
   render() {
@@ -6,9 +6,8 @@ class Header extends React.Component {
       <header>
         <img src="./g-dino.png" alt="logo"/>
       </header>
-
     )
   }
 }
 
-export default Header;
+export default Header
